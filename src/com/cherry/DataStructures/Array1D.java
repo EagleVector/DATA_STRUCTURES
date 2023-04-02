@@ -1,5 +1,6 @@
 package com.cherry.DataStructures;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 // Time Complexity: O((M + N)^2)
@@ -8,11 +9,11 @@ import java.util.Arrays;
 
 public class Array1D {
     public static void main(String[] args) {
-        int[] A = {1, 2, 3, 9, 0, 0, 0, 0, 0, 0};
-        int[] B = {2, 5, 6, 7, 8, 12};
-        int m = 4;
-        int n = 6;
-        System.out.println(Arrays.toString(mergetwoarrays(A, B, m, n)));
+//        int[] A = {1, 2, 3, 9, 0, 0, 0, 0, 0, 0};
+//        int[] B = {2, 5, 6, 7, 8, 12};
+//        int m = 4;
+//        int n = 6;
+//        System.out.println(Arrays.toString(mergetwoarrays(A, B, m, n)));
 
 //        System.out.println(Arrays.toString(mergingarr(A, B)));
 //        int[] arr = mergingarr(A, B);
@@ -21,37 +22,48 @@ public class Array1D {
 //        System.out.println(Arrays.toString(movearr(A)));
 //        int[] arr = movearr(A);
 //        mergingthearrays(arr, B, arr.length - 1, B.length - 1);
+        int[] arr = {12, 12, 24};
+        int children = 6;
+        System.out.println(choclateproblem(arr, children));
+    }
+
+    public static boolean choclateproblem(int[] boxes, int count) {
+        for (int i = 0; i < boxes.length; i++) {
+            if (boxes[i] % count != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+//    public static int[] mergetwoarrays(int[] a, int[] b, int m, int n) {
+//        int i = m - 1;
+//        int j = n - 1;
+//        int s = m + n - 1;
+//        while (i >= 0 && j >= 0) {
+//            if (a[i] > b[j]) {
+//                a[s] = a[i];
+//                i--;
+//            }
+//            else {
+//                a[s] = b[j];
+//                j--;
+//            }
+//            s--;
+//        }
+//        while (i >= 0) {
+//            a[s] = a[i];
+//            s--;
+//            i--;
+//        }
+//        while (j >= 0) {
+//            a[s] = a[j];
+//            s--;
+//            j--;
+//        }
+//
+//        return a;
 //    }
-    }
-
-    public static int[] mergetwoarrays(int[] a, int[] b, int m, int n) {
-        int i = m - 1;
-        int j = n - 1;
-        int s = m + n - 1;
-        while (i >= 0 && j >= 0) {
-            if (a[i] > b[j]) {
-                a[s] = a[i];
-                i--;
-            }
-            else {
-                a[s] = b[j];
-                j--;
-            }
-            s--;
-        }
-        while (i >= 0) {
-            a[s] = a[i];
-            s--;
-            i--;
-        }
-        while (j >= 0) {
-            a[s] = a[j];
-            s--;
-            j--;
-        }
-
-        return a;
-    }
 
 //    public static void mergingthearrays(int[] arr, int[] b, int l1, int l2) {
 //        int l3 = l1 + l2 - 1;
