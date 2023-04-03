@@ -35,7 +35,10 @@ public class Array {
 //
 //        int diff = total - sum;
 //        System.out.println(diff);
+
+        int[] arr = {3, 7, 4, 8, 6, 2, 1};
     }
+
 
 //    public static int missingele(int[] arr) {
 //        int [] soln = new int[arr.length + 1];
