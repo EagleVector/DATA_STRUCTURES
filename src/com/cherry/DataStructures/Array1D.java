@@ -13,13 +13,13 @@ public class Array1D {
 //        int[] B = {2, 5, 6, 7, 8, 12};
 //        int m = 4;
 //        int n = 6;
-//        System.out.println(Arrays.toString(mergetwoarrays(A, B, m, n)));
+//        System.out.println(Array.toString(mergetwoarrays(A, B, m, n)));
 
-//        System.out.println(Arrays.toString(mergingarr(A, B)));
+//        System.out.println(Array.toString(mergingarr(A, B)));
 //        int[] arr = mergingarr(A, B);
-//        System.out.println(Arrays.toString(sorting(arr)));
+//        System.out.println(Array.toString(sorting(arr)));
 
-//        System.out.println(Arrays.toString(movearr(A)));
+//        System.out.println(Array.toString(movearr(A)));
 //        int[] arr = movearr(A);
 //        mergingthearrays(arr, B, arr.length - 1, B.length - 1);
         int[] arr = {12, 12, 24};

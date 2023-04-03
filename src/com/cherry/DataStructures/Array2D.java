@@ -21,13 +21,13 @@ public class Array2D {
 //        };
 //        int[][] arr = matrixtranspose(matrix);
 //        for (int i = 0; i < matrix.length; i++) {
-//            System.out.println(Arrays.toString(matrix[i]));
+//            System.out.println(Array.toString(matrix[i]));
 //        }
 //        int[] arr1 = {3, 27, 30, 40};
 //        int[] arr2 = {8, 10, 80};
 //        mergearrays(arr1, arr2);
 //        int[] arr = {3, 5, 2, 1, 12, 20, 11, 15, 32, 45, 26, 30, 40};
-//        System.out.println(Arrays.toString(mergesort(arr)));
+//        System.out.println(Array.toString(mergesort(arr)));
 
     }
 
@@ -40,8 +40,8 @@ public class Array2D {
 //
 //        int mid = array.length / 2;
 //
-//        int[] left = mergesort(Arrays.copyOfRange(array, 0, mid));
-//        int[] right = mergesort(Arrays.copyOfRange(array, mid, array.length));
+//        int[] left = mergesort(Array.copyOfRange(array, 0, mid));
+//        int[] right = mergesort(Array.copyOfRange(array, mid, array.length));
 //
 //        return mergebothsides(left, right);
 //    }
@@ -109,7 +109,7 @@ public class Array2D {
 //        }
 
 
-//        System.out.println(Arrays.toString(list));
+//        System.out.println(Array.toString(list));
 //    }
 
 //    public static int[][] matrixtranspose(int[][] matrix) {
