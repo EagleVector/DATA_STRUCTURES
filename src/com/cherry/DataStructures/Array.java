@@ -36,7 +36,31 @@ public class Array {
 //        int diff = total - sum;
 //        System.out.println(diff);
 
-        int[] arr = {3, 7, 4, 8, 6, 2, 1};
+//        convert the array into zig-zag fashion.
+
+        int[] arr = {4, 3, 7, 8, 6, 2, 1};
+        int[] soln = zigzag(arr);
+        System.out.println(Arrays.toString(soln));
+    }
+
+    public static int[] zigzag(int[] arr) {
+
+        boolean op = false;
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            if (op) {
+                if (arr[i] < arr[i + 1]) {
+                    swapidx(arr, i, i + 1);
+                }
+            }
+            else {
+                if (arr[i] > arr[i + 1]) {
+                    swapidx(arr, i, i + 1);
+                }
+            }
+            op = !op;
+        }
+        return arr;
     }
 
 
@@ -57,11 +81,11 @@ public class Array {
 
 
 
-//    public static void swapidx(int[] array, int first, int second) {
-//        int temp = array[first];
-//        array[first] = array[second];
-//        array[second] = temp;
-//    }
+    public static void swapidx(int[] array, int first, int second) {
+        int temp = array[first];
+        array[first] = array[second];
+        array[second] = temp;
+    }
 
 //    private static int edgecasemissingelement(int[] arrr) {
 //
