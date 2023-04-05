@@ -73,43 +73,43 @@ public class Array {
 //        int ans = minimumdistance(arr, x, y);
 //        System.out.println("Minimum Distance between " + x + " and " + y + " is: " + ans);
 //        int[] arr = {2, 5, 3, 5, 4, 2, 3};
-        int[] arr = {2, 5, 3, 5, 4, 2, 3};
-        int x = 3;
-        int y = 2;
-        int ans = mindist(arr, x, y);
-        System.out.println(ans);
+//        int[] arr = {2, 5, 3, 5, 4, 2, 3};
+//        int x = 3;
+//        int y = 2;
+//        int ans = mindist(arr, x, y);
+//        System.out.println(ans);
     }
 
-    public static int mindist(int[] arr, int x, int y) {
-        ArrayList<Integer> list1 = new ArrayList<>();
-        ArrayList<Integer> list2 = new ArrayList<>();
-        int diff = Integer.MAX_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == x) {
-                list1.add(i);
-            } else if (arr[i] == y) {
-                list2.add(i);
-            }
-        }
-        int l1 = 0;
-        int l2 = 0;
-
-        while (l1 < list1.size() && l2 < list2.size()) {
-
-            if (Math.abs(list1.get(l1) - list2.get(l2)) < diff) {
-                diff = Math.abs(list1.get(l1) - list2.get(l2));
-            }
-
-            if (list1.get(l1) < list2.get(l2)) {
-                l1++;
-            }
-            else {
-                l2++;
-            }
-        }
-        return diff;
-    }
+//    public static int mindist(int[] arr, int x, int y) {
+//        ArrayList<Integer> list1 = new ArrayList<>();
+//        ArrayList<Integer> list2 = new ArrayList<>();
+//        int diff = Integer.MAX_VALUE;
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] == x) {
+//                list1.add(i);
+//            } else if (arr[i] == y) {
+//                list2.add(i);
+//            }
+//        }
+//        int l1 = 0;
+//        int l2 = 0;
+//
+//        while (l1 < list1.size() && l2 < list2.size()) {
+//
+//            if (Math.abs(list1.get(l1) - list2.get(l2)) < diff) {
+//                diff = Math.abs(list1.get(l1) - list2.get(l2));
+//            }
+//
+//            if (list1.get(l1) < list2.get(l2)) {
+//                l1++;
+//            }
+//            else {
+//                l2++;
+//            }
+//        }
+//        return diff;
+//    }
 
 //    public static int minimumdistance(int[] arr, int x, int y) {
 //
