@@ -16,6 +16,7 @@ public class SlideWindow {
 //        System.out.println(larcontssubarr(arr));
 //        int[] arr = {1, 2, 3, 4};
 //        printsubarrays(arr);
+//        Most optimized solution.
 //        int[] arr1 = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 //        int[] arr2 = {3, 4, 5, 6, 7};
 //        int[] arr3 = {1, 2, 3, 4, 5};
@@ -24,6 +25,11 @@ public class SlideWindow {
 //        int l2 = arr2.length;
 //        int l3 = arr3.length;
 //        int l4 = arr4.length;
+//        int[] L = {arr1[0], arr2[0], arr3[0], arr4[0]};
+//        int[] R = {arr1[l1 - 1], arr2[l2 - 1], arr3[l3 - 1], arr4[l4 - 1]};
+//        int n = L.length;
+//        int answer = maximumcount(L, R, n);
+//        System.out.println(answer);
 //
 //        int[] list = new int[l1 + l2 + l3 + l4];
 //        for (int i = 0; i < arr1.length; i++) {
@@ -82,6 +88,31 @@ public class SlideWindow {
 //        System.out.println(listx.get(0));
 //        System.out.println(max);
     }
+
+//    public static int maximumcount(int[] left, int[] right, int n) {
+//        int[] arr = new int[1000];
+//        int max = -1;
+//
+//        for (int i = 0; i < n; i++) {
+//
+//            arr[left[i]]++;
+//            arr[right[i]]--;
+//            if (right[i] > max) {
+//                max = right[i];
+//            }
+//        }
+//        int max_sum = 0;
+//        int ind = 0;
+//
+//        for (int i = 1; i < (max + 1); i++) {
+//            arr[i] = arr[i] + arr[i - 1];
+//            if (max_sum < arr[i]) {
+//                max_sum = arr[i];
+//                ind = i;
+//            }
+//        }
+//        return arr[ind];
+//    }
 
 //    public static void printsubarrays(int[] arr) {
 //        for (int i = 0; i < arr.length; i++) {
