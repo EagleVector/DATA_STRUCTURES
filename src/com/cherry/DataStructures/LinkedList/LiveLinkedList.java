@@ -1,4 +1,4 @@
-package com.cherry.DataStructures;
+package com.cherry.DataStructures.LinkedList;
 
 import java.util.LinkedList;
 
