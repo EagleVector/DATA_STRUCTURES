@@ -104,6 +104,21 @@ public class CustomLinkedList {
         size++;
     }
 
+//    INSERT USING RECURSION
+
+    public void insertRec(int val, int index) {
+        head = insertRec(val, index, head);
+    }
+    private Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRec(val, --index, node.next);
+        return node;
+    }
     public void display() {
         Node temp = head;
         while (temp != null) {
@@ -123,5 +138,49 @@ public class CustomLinkedList {
             this.value = value;
             this.next = next;
         }
+    }
+    public void duplicates() {
+        Node node = head;
+
+        while (node.next != null) {
+            if (node.value == node.next.value) {
+                node.next = node.next.next;
+                size--;
+            }
+            else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
+    }
+
+//    Merge
+    public static CustomLinkedList merge(CustomLinkedList first, CustomLinkedList second) {
+        Node f = first.head;
+        Node s = second.head;
+
+        CustomLinkedList answer = new CustomLinkedList();
+
+        while (f != null && s != null) {
+            if (f.value < s.value) {
+                answer.insertLast(f.value);
+                f = f.next;
+            }
+            else {
+                answer.insertLast(s.value);
+                s = s.next;
+            }
+        }
+        while (f != null) {
+            answer.insertLast(f.value);
+            f = f.next;
+
+        }
+        while (s != null) {
+            answer.insertLast(s.value);
+            s = s.next;
+        }
+        return answer;
     }
 }

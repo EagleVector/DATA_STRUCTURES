@@ -2,11 +2,19 @@ package com.cherry.DataStructures.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-//        CustomLinkedList list = new CustomLinkedList();
-//        list.insertFirst(3);
-//        list.insertFirst(8);
-//        list.insertFirst(11);
-//        list.insertFirst(15);
+        CustomLinkedList list1 = new CustomLinkedList();
+        list1.insertLast(1);
+        list1.insertLast(2);
+        list1.insertLast(3);
+        list1.insertLast(5);
+        list1.insertLast(8);
+        CustomLinkedList list2 = new CustomLinkedList();
+        list2.insertLast(1);
+        list2.insertLast(4);
+        list2.insertLast(6);
+        CustomLinkedList ans = CustomLinkedList.merge(list1, list2);
+        ans.display();
+
 //        list.insertLast(12);
 //        list.insertLast(15);
 //        list.insertLast(8);
@@ -32,12 +40,15 @@ public class Main {
 ////        list.RevDisplay();
 //        list.insert(11, 65);
 //        list.RevDisplay();
-        CircularLinkedList list = new CircularLinkedList();
-        list.insert(12);
-        list.insert(23);
-        list.insert(32);
-        list.insert(59);
-        list.delete(23);
-        list.display();
+//        CircularLinkedList list = new CircularLinkedList();
+//        list.insert(12);
+//        list.insert(23);
+//        list.insert(32);
+//        list.insert(59);
+//        list.delete(23);
+//        list.display();
+//        System.out.println();
+//        list.duplicates();
+//        list.display();
     }
 }
