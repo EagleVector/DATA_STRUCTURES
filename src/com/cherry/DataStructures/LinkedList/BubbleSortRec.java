@@ -14,7 +14,7 @@ public class BubbleSortRec {
 //        triangle(4,0);
 //        triangle2(4,0);
         int[] arr = {5, 4, 3, 2, 1};
-//        bubbleSort(arr, 4, 0);
+//        bubbleSortAlgo(arr, 4, 0);
         SelectionSort(arr, arr.length, 0, 0);
         System.out.println(Arrays.toString(arr));
     }
@@ -38,7 +38,7 @@ public class BubbleSortRec {
         }
     }
 
-//    private static void bubbleSort(int[] arr, int row, int col) {
+//    private static void bubbleSortAlgo(int[] arr, int row, int col) {
 //        if (row == 0) {
 //            return;
 //        }
