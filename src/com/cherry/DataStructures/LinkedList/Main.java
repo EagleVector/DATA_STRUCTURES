@@ -2,18 +2,18 @@ package com.cherry.DataStructures.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        CustomLinkedList list1 = new CustomLinkedList();
-        list1.insertLast(1);
-        list1.insertLast(2);
-        list1.insertLast(3);
-        list1.insertLast(5);
-        list1.insertLast(8);
-        CustomLinkedList list2 = new CustomLinkedList();
-        list2.insertLast(1);
-        list2.insertLast(4);
-        list2.insertLast(6);
-        CustomLinkedList ans = CustomLinkedList.merge(list1, list2);
-        ans.display();
+//        CustomLinkedList list1 = new CustomLinkedList();
+//        list1.insertLast(1);
+//        list1.insertLast(2);
+//        list1.insertLast(3);
+//        list1.insertLast(5);
+//        list1.insertLast(8);
+//        CustomLinkedList list2 = new CustomLinkedList();
+//        list2.insertLast(1);
+//        list2.insertLast(4);
+//        list2.insertLast(6);
+//        CustomLinkedList ans = CustomLinkedList.merge(list1, list2);
+//        ans.display();
 
 //        list.insertLast(12);
 //        list.insertLast(15);
@@ -50,5 +50,13 @@ public class Main {
 //        System.out.println();
 //        list.duplicates();
 //        list.display();
+//        int num = 25;
+//        int sum = 0;
+//        while (num > 0) {
+//            int dig = num % 10;
+//            sum = sum + dig * dig;
+//            num = num / 10;
+//        }
+//        System.out.println(sum);
     }
 }
