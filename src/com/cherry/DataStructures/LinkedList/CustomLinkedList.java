@@ -184,6 +184,8 @@ public class CustomLinkedList {
         return answer;
     }
 
+//Bubble Sort in Linked List
+
     public void bubbleSort() {
         bubbleSort(size - 1, 0);
     }
@@ -219,5 +221,51 @@ public class CustomLinkedList {
         else {
             bubbleSort(row - 1, 0);
         }
+    }
+//Recursion Linked List Reversal
+    public void reverse(Node node) {
+        if (node == tail) {
+            head = tail;
+            return;
+        }
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    public void reverseInplace() {
+        if (size < 2) {
+            return;
+        }
+        Node prev = null;
+        Node pres = head;
+        Node ahead = pres.next;
+
+        while (pres != null) {
+            pres.next = prev;
+            prev = pres;
+            pres = ahead;
+            if (ahead != null) {
+                ahead = ahead.next;
+            }
+        }
+        head = prev;
+    }
+
+    public static void main(String[] args) {
+        CustomLinkedList list = new CustomLinkedList();
+        list.insertLast(1);
+        list.insertLast(2);
+        list.insertLast(3);
+        list.insertLast(4);
+        list.insertLast(5);
+        list.display();
+        System.out.println();
+        System.out.println(list.tail.value);
+        System.out.println(list.head.value);
+        Node node = list.head;
+        list.reverseInplace();
+        list.display();
     }
 }

@@ -1,17 +1,19 @@
 package com.cherry.DataStructures.LinkedList;
 
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        CustomLinkedList list1 = new CustomLinkedList();
-        list1.insertLast(5);
-        list1.insertLast(4);
-        list1.insertLast(3);
-        list1.insertLast(2);
-        list1.insertLast(1);
-        list1.display();
-        System.out.println();
-        list1.bubbleSort();
-        list1.display();
+//        CustomLinkedList list1 = new CustomLinkedList();
+//        list1.insertLast(5);
+//        list1.insertLast(4);
+//        list1.insertLast(3);
+//        list1.insertLast(2);
+//        list1.insertLast(1);
+//        list1.display();
+//        System.out.println();
+//
+
 //        CustomLinkedList list2 = new CustomLinkedList();
 //        list2.insertLast(1);
 //        list2.insertLast(4);
