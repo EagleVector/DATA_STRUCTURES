@@ -65,9 +65,9 @@ public class Main {
 //            num = num / 10;
 //        }
 //        System.out.println(sum);
-        int[] arr = {2, 7, 11, 13};
-        int target = 9;
-        System.out.println(Arrays.toString(twosum(arr, target)));
+//        int[] arr = {2, 7, 11, 13};
+//        int target = 9;
+//        System.out.println(Arrays.toString(twosum(arr, target)));
     }
 
 //    private static int[] twosum(int[] arr, int target) {
