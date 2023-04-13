@@ -1,5 +1,6 @@
 package com.cherry.DataStructures.LinkedList;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Main {
@@ -64,5 +65,19 @@ public class Main {
 //            num = num / 10;
 //        }
 //        System.out.println(sum);
+        int[] arr = {2, 7, 11, 13};
+        int target = 9;
+        System.out.println(Arrays.toString(twosum(arr, target)));
     }
+
+//    private static int[] twosum(int[] arr, int target) {
+//        for (int i = 0; i < arr.length - 1; i++) {
+//            for (int j = i + 1; j < arr.length; j++) {
+//                if ((target - (arr[i] + arr[j])) == 0) {
+//                    return new int[] {i, j};
+//                }
+//            }
+//        }
+//        return new int[] {-1, -1};
+//    }
 }
