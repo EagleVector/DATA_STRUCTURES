@@ -1,5 +1,4 @@
 package com.cherry.DataStructures.StackAndQueue;
-
 import java.sql.SQLOutput;
 
 public class Main {
@@ -50,34 +49,40 @@ public class Main {
 //        queue.insert(45);
 //
 //        queue.display();
-        DynamicQueue queue = new DynamicQueue(3);
-        queue.insert(34);
-        queue.insert(21);
-        queue.insert(49);
-        queue.insert(63);
-        queue.insert(97);
+//        DynamicQueue queue = new DynamicQueue(3);
+//        queue.insert(34);
+//        queue.insert(21);
+//        queue.insert(49);
+//        queue.insert(63);
+//        queue.insert(97);
+//
+//        queue.display();
+//
+//        queue.remove();
+//
+//        queue.display();
+//
+//        queue.insert(7);
+//
+//        queue.display();
+//
+//        queue.remove();
+//
+//        queue.display();
+//
+//        queue.insert(87);
+//
+//        queue.display();
+//
+//        queue.remove();
+//
+//        queue.display();
+        Tree.Node root = new Tree.Node(5);
+        root.left  = new Tree.Node(3);
+        root.right = new Tree.Node(1);
+        root.right.left = new Tree.Node(2);
 
-        queue.display();
-
-        queue.remove();
-
-        queue.display();
-
-        queue.insert(7);
-
-        queue.display();
-
-        queue.remove();
-
-        queue.display();
-
-        queue.insert(87);
-
-        queue.display();
-
-        queue.remove();
-
-        queue.display();
+        System.out.println(root);
 
     }
 }
