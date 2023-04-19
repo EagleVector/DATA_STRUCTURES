@@ -77,12 +77,12 @@ public class Main {
 //        queue.remove();
 //
 //        queue.display();
-        Tree.Node root = new Tree.Node(5);
-        root.left  = new Tree.Node(3);
-        root.right = new Tree.Node(1);
-        root.right.left = new Tree.Node(2);
-
-        System.out.println(root);
+//        Node.Node root = new Node.Node(5);
+//        root.left  = new Node.Node(3);
+//        root.right = new Node.Node(1);
+//        root.right.left = new Node.Node(2);
+//
+//        System.out.println(root);
 
     }
 }
