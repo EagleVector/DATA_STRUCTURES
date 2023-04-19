@@ -1,4 +1,4 @@
-package com.cherry.DataStructures.StackAndQueue;
+package com.cherry.DataStructures.Trees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
