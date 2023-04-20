@@ -58,31 +58,62 @@ public class Node {
 //        return inOrder;
 //    }
 
-    static List<Integer> postorderTraversal(Node curr) {
-        Stack<Node> stack1 = new Stack<>();
-        Stack<Node> stack2 = new Stack<>();
-        List<Integer> postOrder = new ArrayList<>();
+//    static List<Integer> postorderTraversal(Node curr) {
+//        Stack<Node> stack1 = new Stack<>();
+//        Stack<Node> stack2 = new Stack<>();
+//        List<Integer> postOrder = new ArrayList<>();
+//
+//        if(curr == null) {
+//            return postOrder;
+//        }
+//
+//        stack1.push(curr);
+//
+//        while(!stack1.isEmpty()) {
+//            curr = stack1.pop();
+//            stack2.add(curr);
+//            if (curr.left != null) {
+//                stack1.push(curr.left);
+//            }
+//            if (curr.right != null) {
+//                stack1.push(curr.right);
+//            }
+//        }
+//        while(!stack2.isEmpty()) {
+//            postOrder.add(stack2.pop().val);
+//        }
+//        return postOrder;
+//    }
 
-        if(curr == null) {
-            return postOrder;
+    static List<Integer> postorderOneStack(Node curr) {
+        Stack<Node> stack = new Stack<>();
+        List<Integer> list = new ArrayList<>();
+
+        if (curr == null) {
+            return list;
         }
 
-        stack1.push(curr);
-
-        while(!stack1.isEmpty()) {
-            curr = stack1.pop();
-            stack2.add(curr);
-            if (curr.left != null) {
-                stack1.push(curr.left);
+        while (curr != null || !stack.isEmpty()) {
+            if (curr != null) {
+                stack.push(curr);
+                curr = curr.left;
+            } else {
+                Node temp = stack.peek().right;
+                if (temp == null) {
+                    temp = stack.peek();
+                    stack.pop();
+                    list.add(temp.val);
+                    while (!stack.isEmpty() && temp == stack.peek().right) {
+                        temp = stack.peek();
+                        stack.pop();
+                        list.add(temp.val);
+                    }
+                } else {
+                    curr = temp;
+                }
             }
-            if (curr.right != null) {
-                stack1.push(curr.right);
-            }
         }
-        while(!stack2.isEmpty()) {
-            postOrder.add(stack2.pop().val);
-        }
-        return postOrder;
+        return list;
     }
 
 
@@ -99,7 +130,7 @@ public class Node {
         root.right.right.right = new Node(10);
 
 
-        System.out.println("The Post-Order iterative Traversal is: " + postorderTraversal(root));
+        System.out.println("The Post-Order iterative Traversal is: " + postorderOneStack(root));
 
     }
 }
