@@ -116,6 +116,30 @@ public class Node {
         return list;
     }
 
+//    Finding an element in the tree.
+    public static boolean find(Node root, int value) {
+        if (root == null) {
+            return false;
+        }
+        if (root.val == value) {
+            return true;
+        }
+        boolean left = find(root.left, value);
+        boolean right = find(root.right, value);
+        return left || right;
+    }
+
+    public static int height(Node root) {
+
+        if (root == null) {
+            return -1;
+        }
+
+        int lh = height(root.left);
+        int rh = height(root.right);
+
+        return Math.max(lh, rh) + 1;
+    }
 
     public static void main(String[] args) {
         Node root = new Node(1);
@@ -130,7 +154,7 @@ public class Node {
         root.right.right.right = new Node(10);
 
 
-        System.out.println("The Post-Order iterative Traversal is: " + postorderOneStack(root));
-
+//        System.out.println("The Post-Order iterative Traversal is: " + postorderOneStack(root));
+        System.out.println(height(root));
     }
 }

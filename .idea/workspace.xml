@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e65b445-2e01-451e-bfd5-b59c63abcdb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/cherry/DataStructures/StackAndQueue/Live.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cherry/DataStructures/Trees/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cherry/DataStructures/Trees/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,5 +65,16 @@
       <updated>1679978472069</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/cherry/DataStructures/Trees/Node.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
