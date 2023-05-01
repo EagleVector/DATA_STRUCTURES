@@ -22,34 +22,90 @@ public class InterviewProblems {
 //        String t = "rat";
 //        boolean ans = isAnagram(s, t);
 //        System.out.println(ans);
-        HashMap<String, String> map = new HashMap<>();
-        map.put("Chennai", "Bengaluru");
-        map.put("Mumbai", "Delhi");
-        map.put("Goa", "Chennai");
-        map.put("Delhi", "Goa");
-
-        String start = getStart(map);
-
-        while(map.containsKey(start)) {
-            System.out.print(start + " ---> ");
-            start = map.get(start);
-        }
-        System.out.print(start);
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("Chennai", "Bengaluru");
+//        map.put("Mumbai", "Delhi");
+//        map.put("Goa", "Chennai");
+//        map.put("Delhi", "Goa");
+//
+//        String start = getStart(map);
+//
+//        while(map.containsKey(start)) {
+//            System.out.print(start + " ---> ");
+//            start = map.get(start);
+//        }
+//        System.out.print(start);
+//        int[] arr = {1, 1, 1, 2, 2, 3};
+//        int k = 2;
+//        int[] res = topFrequency(arr, k);
+//        System.out.println(Arrays.toString(res));
+        int[] arr = {1, 2, 3, 4};
+        int[] ans = productArray(arr);
+        System.out.println(Arrays.toString(ans));
     }
 
-    private static String getStart(HashMap<String, String> map) {
-        HashMap<String, String> revMap = new HashMap<>();
-        for (String key : map.keySet()) {
-            revMap.put(map.get(key), key);
-        }
-
-        for (String key : map.keySet()) {
-            if (!revMap.containsKey(key)) {
-                return key;
+    private static int[] productArray(int[] arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int product = 1;
+        int[] ans = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            if (map.containsKey(arr[i])) {
+                map.put(arr[i], map.get(arr[i]) + 1);
+            } else {
+                map.put(arr[i], 1);
             }
+            product = product * arr[i];
         }
-        return null;
+        for (int i = 0; i < arr.length; i++) {
+            ans[i] = product / arr[i];
+        }
+        return ans;
     }
+}
+
+//    private static int[] topFrequency(int[] arr, int k) {
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        int[] ans = new int[k];
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            if (map.containsKey(arr[i])) {
+//                map.put(arr[i], map.get(arr[i]) + 1);
+//            }
+//            else {
+//                map.put(arr[i], 1);
+//            }
+//        }
+//        while (k > 0) {
+//            int maxCount = Integer.MIN_VALUE;
+//            int maxNum = -1;
+//            for (int key : map.keySet()) {
+//                int count = map.get(key);
+//                if (count > maxCount) {
+//                    maxCount = count;
+//                    maxNum = key;
+//                }
+//            }
+//            ans[k - 1] = maxNum;
+//            map.remove(maxNum);
+//            k--;
+//        }
+//        return ans;
+//    }
+//}
+
+//    private static String getStart(HashMap<String, String> map) {
+//        HashMap<String, String> revMap = new HashMap<>();
+//        for (String key : map.keySet()) {
+//            revMap.put(map.get(key), key);
+//        }
+//
+//        for (String key : map.keySet()) {
+//            if (!revMap.containsKey(key)) {
+//                return key;
+//            }
+//        }
+//        return null;
+//    }
 
 //    private static boolean isAnagram(String s, String t) {
 //        char[] arr1 = s.toCharArray();
@@ -170,5 +226,3 @@ public class InterviewProblems {
 //            System.out.println(arr[i] + " : " + count);
 //        }
 //    }
-
-}
