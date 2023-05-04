@@ -39,28 +39,153 @@ public class InterviewProblems {
 //        int k = 2;
 //        int[] res = topFrequency(arr, k);
 //        System.out.println(Arrays.toString(res));
-        int[] arr = {1, 2, 3, 4};
-        int[] ans = productArray(arr);
-        System.out.println(Arrays.toString(ans));
+//        int[] arr = {1, 2, 3, 4};
+//        productArray(arr);
+//        String[][] board = {{"5","3",".",".","7",".",".",".","."},
+//                {"6",".",".","1","9","5",".",".","."},
+//                {".","9","8",".",".",".",".","6","."},
+//                {"8",".",".",".","6",".",".",".","3"},
+//                {"4",".",".","8",".","3",".",".","1"},
+//                {"7",".",".",".","2",".",".",".","6"},
+//                {".","6",".",".",".",".","2","8","."},
+//                {".",".",".","4","1","9",".",".","5"},
+//                {".",".",".",".","8",".",".","7","9"}};
+//
+//        boolean ans = validSudoku(board);
+//        System.out.println(ans);
+        int[] arr = {0,3,7,2,5,8,4,6,0,1};
+        int ans = longestSub(arr);
+        System.out.println(ans);
     }
 
-    private static int[] productArray(int[] arr) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        int product = 1;
-        int[] ans = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            if (map.containsKey(arr[i])) {
-                map.put(arr[i], map.get(arr[i]) + 1);
-            } else {
-                map.put(arr[i], 1);
+    private static int longestSub(int[] arr) {
+        HashSet<Integer> set = new HashSet<>();
+        int count = 1;
+        if (arr.length == 0) {
+            return 0;
+        }
+        for (int num : arr) {
+            set.add(num);
+        }
+        for (int num : arr) {
+            if (!set.contains(num - 1)) {
+                int maxCount = 1;
+                while (set.contains(num + 1)) {
+                    num++;
+                    maxCount++;
+                }
+                count = Math.max(count, maxCount);
             }
-            product = product * arr[i];
         }
-        for (int i = 0; i < arr.length; i++) {
-            ans[i] = product / arr[i];
-        }
-        return ans;
+        return count;
     }
+
+//    private static int longestSub(int[] arr) {
+//        int count = 1;
+//        for (int i = 0; i < arr.length - 1; i++) {
+//            for (int j = i + 1; j < arr.length; j++) {
+//                if (arr[i] > arr[j]) {
+//                    int temp = arr[i];
+//                    arr[i] = arr[j];
+//                    arr[j] = temp;
+//                }
+//            }
+//        }
+//        System.out.println(Arrays.toString(arr));
+//
+//        for (int i = 0; i < arr.length - 1; i++){
+//            if (arr[i + 1] == arr[i] + 1) {
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+
+//    private static boolean validSudoku(String[][] board) {
+//        int row = board.length;
+//        int col = board[0].length;
+//
+//        // Check for rows.
+//        for (int i = 0; i < row; i++) {
+//            HashSet<String> rowSet = new HashSet<>();
+//            for (int j = 0; j < col; j++) {
+//                if (board[i][j] == ".") {
+//                    continue;
+//                }
+//                if (rowSet.contains(board[i][j])) {
+//                    return false;
+//                }
+//                rowSet.add(board[i][j]);
+//            }
+//        }
+//
+//        // Check for columns.
+//        for (int i = 0; i < col; i++) {
+//            HashSet<String> colSet = new HashSet<>();
+//            for (int j = 0; j < row; j++) {
+//                if (board[j][i] == ".") {
+//                    continue;
+//                }
+//                if (colSet.contains(board[j][i])) {
+//                    return false;
+//                }
+//                colSet.add(board[j][i]);
+//            }
+//        }
+//
+////      Check for blocks.
+//        for (int i = 0; i < row; i = i + 3) {
+//            for (int j = 0; j < col; j = j + 3)  {
+//                if (!validBlock(i, j, board)) {
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
+//    }
+//
+//    private static boolean validBlock(int rowIdx, int colIdx, String[][] board) {
+//        int row = rowIdx + 3;
+//        int col = colIdx + 3;
+//
+//        HashSet<String> blockSet = new HashSet<>();
+//        for (int i = 0; i < row; i++) {
+//            for (int j = 0; j < col; j++) {
+//                if (board[i][j] == ".") {
+//                    continue;
+//                }
+//                if (blockSet.contains(board[i][j])) {
+//                    return false;
+//                }
+//                blockSet.add(board[i][j]);
+//            }
+//        }
+//        return true;
+//    }
+
+//    private static void productArray(int[] arr) {
+//        int[] prefixArr = new int[arr.length];
+//        int[] postfixArr = new int[arr.length];
+//        int[] result = new int[arr.length];
+//        prefixArr[0] = arr[0];
+//        postfixArr[arr.length - 1] = arr[arr.length - 1];
+//
+//        for (int i = 1; i < arr.length; i++) {
+//            prefixArr[i] = arr[i] * prefixArr[i - 1];
+//        }
+//        for (int i = arr.length - 2; i >= 0; i--) {
+//            postfixArr[i] = arr[i] * postfixArr[i + 1];
+//        }
+//        result[0] = postfixArr[1];
+//        result[arr.length - 1] = prefixArr[arr.length - 2];
+//        for (int i = 1; i < arr.length - 1; i++) {
+//            result[i] = prefixArr[i - 1] * postfixArr[i + 1];
+//        }
+//
+//        System.out.println(Arrays.toString(prefixArr));
+//        System.out.println(Arrays.toString(postfixArr));
+//        System.out.println(Arrays.toString(result));
+//    }
 }
 
 //    private static int[] topFrequency(int[] arr, int k) {
