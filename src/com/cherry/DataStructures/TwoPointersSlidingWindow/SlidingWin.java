@@ -12,8 +12,8 @@ public class SlidingWin {
 //        int k = 2;
 //        int ans = characterReplace(str, k);
 //        System.out.println(ans);
-        String s1 = "ab";
-        String s2 = "eidbaooo";
+        String s1 = "adc";
+        String s2 = "dcda";
 
         boolean ans = permutationStr(s1, s2);
         System.out.println(ans);
@@ -23,8 +23,28 @@ public class SlidingWin {
         if (s1.length() > s2.length()) {
             return false;
         }
-        return true;
-
+        int[] hash1 = new int[26];
+        int[] hash2 = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            hash1[s1.charAt(i) - 'a']++;
+        }
+        System.out.println(Arrays.toString(hash1));
+        int left = 0;
+        int right = s1.length() - 1;
+        for (;right < s2.length(); right++) {
+            for (int i = left; i <= right; i++) {
+                hash2[s2.charAt(i) - 'a']++;
+            }
+            System.out.println(Arrays.toString(hash2));
+            if (Arrays.equals(hash1, hash2)) {
+                return true;
+            }
+            else {
+                left++;
+                Arrays.fill(hash2, 0);
+            }
+        }
+        return false;
     }
 
 //    private static int characterReplace(String str, int k) {
