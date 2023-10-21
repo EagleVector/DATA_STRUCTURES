@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 
-//Implementation of HashMap in Java is done by creating an array of Linked List.
+//BinaryTree of HashMap in Java is done by creating an array of Linked List.
 public class CustomHashmap {
     static class HashMap<K, V> {
         private class Node {
