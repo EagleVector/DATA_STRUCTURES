@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Array {
     public static void main(String[] args) {
+
 //        int[] arr = {1, 2, 5, 3, 9, 7, 12, 4};
 //
 //        for (int i = 0; i < arr.length; i++) {
@@ -79,6 +80,7 @@ public class Array {
 //        int ans = mindist(arr, x, y);
 //        System.out.println(ans);
     }
+
 
 //    public static int mindist(int[] arr, int x, int y) {
 //        ArrayList<Integer> list1 = new ArrayList<>();

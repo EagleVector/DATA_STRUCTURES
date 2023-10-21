@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e65b445-2e01-451e-bfd5-b59c63abcdb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/cherry/DataStructures/TwoPointersSlidingWindow/SlidingWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cherry/DataStructures/TwoPointersSlidingWindow/SlidingWin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/cherry/DataStructures/Trees/Implementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cherry/DataStructures/Arrays/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cherry/DataStructures/Arrays/Array.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
